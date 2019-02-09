@@ -14,17 +14,20 @@ export class TodoItem extends Component {
         }
         // return this.props.todo.completed ? { textDecoration: 'line-through' } : { textDecoration: 'none'}
     }
-    toggleCompleted = (e) => {
-        console.log(e);
-        
-    }
+    // toggleCompleted = (e) => {
+    //     console.log(e);
+    // }
 
   render() {
+      const {id, title} = this.props.todo;
     return (
       <div style={ this.getStyle() }>
         <p>
-            <input type="checkbox" onChange={this.props.toggleCompleted}/>
-            {this.props.todo.title}
+            <input 
+                type="checkbox" 
+                    onChange={this.props.toggleCompleted.bind(this, id)}
+            />
+            {title}
         </p>
       </div>
     )
