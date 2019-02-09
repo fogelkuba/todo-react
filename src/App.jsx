@@ -7,7 +7,7 @@ import About from './components/pages/About';
 import Header from './components/layout/Header';
 
 import axios from 'axios';
-// import uuid from 'uuid';
+import uuid from 'uuid';
 
 import './App.css';
 
