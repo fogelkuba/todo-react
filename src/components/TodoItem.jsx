@@ -28,7 +28,7 @@ export class TodoItem extends Component {
                     onChange={this.props.toggleCompleted.bind(this, id)}
             />
             {title}
-            <button onClick={this.props.remove.bind(this, id)} style={{ padding: '10px', fontSize: '15px', backgroundColor: 'transparent', border: 'none'}}>x</button>
+                <button onClick={this.props.remove.bind(this, id)} style={{ padding: '5px', color: 'red', fontWeight: 'bold', fontSize: '20px' ,backgroundColor: 'transparent', border: 'none', float: 'right'}}>x</button>
         </p>
       </div>
     )
