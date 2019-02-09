@@ -3,30 +3,35 @@ import PropTypes from 'prop-types';
 
 export class TodoItem extends Component {
     getStyle = () => {
-        // if (this.props.todo.completed) {
-        //     return {
-        //         textDecoration: 'line-through'
-        //     } 
-        // } else {
-        //     return {
-        //         textDecoration: 'none'
-        //     }
-        // }
-        return this.props.todo.completed ? { textDecoration: 'line-through' } : { textDecoration: 'none'}
+        return {
+            backgroundColor: '#f4f4f4',
+            padding: '15px',
+            borderBottom: '2px dotted #ccc',
+            textDecoration: this.props.todo.completed 
+            ? 'line-through' 
+            : 'none',
+        
+        }
+        // return this.props.todo.completed ? { textDecoration: 'line-through' } : { textDecoration: 'none'}
+    }
+    toggleCompleted = (e) => {
+        console.log(e);
+        
     }
 
   render() {
     return (
       <div style={ this.getStyle() }>
         <p>
-        {this.props.todo.title}</p>
-
+            <input type="checkbox" onChange={this.props.toggleCompleted}/>
+            {this.props.todo.title}
+        </p>
       </div>
     )
   }
 }
 
-TodoItem.PropTypes = {
+TodoItem.propTypes = {
     todo: PropTypes.object.isRequired
 }
 
