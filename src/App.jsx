@@ -13,10 +13,10 @@ class App extends Component {
       {
         id: 2,
         title: 'Say hi to mark',
-        completed: false
+        completed: true
       },
       {
-        id: 2,
+        id: 3,
         title: 'Meeting at 5pm',
         completed: false
       },
@@ -24,11 +24,10 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.todos)
     return (
       <div className="App">
         <h1>App</h1>
-        <Todos/>
+        <Todos todos={this.state.todos}/>
       </div>
     );
   }
